@@ -34,7 +34,36 @@ The run_analysis.R code has comments throughout and here is additional informati
 - I manually extracted the columns that had the Mean and STD values using a simple excel lookup (sorry!), these columns are the 'vectorcolumns' variable in the code
 
 3c
-- i used cbind 
+- i used rbind to create a master data label set and then cbind to append the activity labels to the actual data
+- the ordered() function was used to convert the numeric activity labels into the more meaningful text descriptions
+- the column labels were pulled straight from the underlying data, I didn't have time to make them more meaningful to an end user. 
+
+This ended problems 1 through 4
+
+--------
+
+The final step was to solve for the averages of all of the measurements that we were asked to retrieve by the unique combinations of Subject (the person in the test) and Activity
+
+There should be 180 observations for this data set as there are 30 subjects and 6 activities
+
+In the code, starting with #4a
+
+- I needed to add the subjects into the primary dataset, as we had not done that before
+- I used cbind and rbind to do this again
+
+4b - goal was to isolate all unique combinations of subject and activity
+
+- I used mutate to create a combined column of Subject & Activity
+- I converted to a data.table and used lapply to calculate the mean of the measurement columns by unique of my new concated_column
+
+4c - I took off the front column because it was ugly and repeated information from the next two columns
+
+4d - I had to reconvert the activity numbers to the names as I lost them in the data.table conversion
+
+4e - I wrote my final tidydata set to a .txt file so I could submit per the class instructions
+
+
+
 
 
 
