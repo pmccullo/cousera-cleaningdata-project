@@ -1,4 +1,6 @@
-cousera-cleaningdata-project
+pmccullo Cousera Getting & Cleaning Data - Final Project
 ============================
 
-This is my submission for my class project for Getting &amp; Cleaning Data through Coursera
+Please follow this summary for information on this project
+
+
